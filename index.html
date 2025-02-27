@@ -90,12 +90,26 @@
         count++;
         document.getElementById('p').innerText = count;
     }
-    //註冊滑鼠按下的事件，呼叫計數器累加 function
+    // 註冊滑鼠按下的事件，呼叫計數器累加 function
     document.addEventListener('mousedown', add);
     //註冊滑鼠按下的時候，更新計數器的顯示
     document.addEventListener('mousedown', function () {
         p.innerText = count;
     });
+    // 當滑鼠按下，切換張嘴圖片
+    document.addEventListener('mousedown', function () {
+        p.style.backgroundImage = "url('imgs/p.png')";
+    });
+    // 註冊滑鼠放開的事件，切換張嘴圖片
+    document.addEventListener('mouseup', function () {
+        p.style.backgroundImage = "url('imgs/op.png')";
+    });
+    // 當滑鼠按下，播放 pops/pop1.mp3
+    document.addEventListener('mousedown', function () {
+        let audio = new Audio('pops/pop1.mp3');
+        audio.play();
+    });
+
 
 
 </script>
